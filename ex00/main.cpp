@@ -1,6 +1,6 @@
-#include "Swap.hpp"
-#include "Min.hpp"
-#include "Max.hpp"
+#include "swap.hpp"
+#include "min.hpp"
+#include "max.hpp"
 #include <iostream>
 
 int main(void)
