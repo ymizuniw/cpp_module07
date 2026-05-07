@@ -1,10 +1,10 @@
-NAME=test
+NAME = test
 
-CXX=c++
-CXXFLAGS=-Wall -Wextra -Werror -pedantic-errors -std=c++98
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -pedantic-errors -std=c++98
 
-INCS=-I.
-SRCS=main.cpp
+INCS = -I.
+SRCS = main.cpp
 OBJS=$(SRCS:.cpp=.o)
 
 %.o: %.cpp
