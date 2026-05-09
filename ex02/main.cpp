@@ -72,7 +72,8 @@ int test_ocf(void) {
 int subscript_test(void) {
   int res = 0;
   int exception_occurred = 0;
-  std::cout << "\n====Subscript Access====" << std::endl;
+  std::cout << "\033[31m" << "\n====Subscript Access====" << "\033[0m"
+            << std::endl;
   Array<int> arr1 = Array<int>(3);
   std::cout << std::endl;
   for (size_t i = 0; i < arr1.size(); i++) {
@@ -97,7 +98,9 @@ int subscript_test(void) {
 int test_ocf_float(void) {
   int res = 0;
   int err = 0;
-  std::cout << "\n====Float: Default Constructor Test====" << std::endl;
+  std::cout << "\033[31m"
+            << "\n====Float: Default Constructor Test====" << "\033[0m"
+            << std::endl;
   Array<float> arr = Array<float>();
   if (arr.size() == 0)
     std::cout << "Array is empty as expected" << std::endl;
@@ -160,7 +163,8 @@ int test_ocf_float(void) {
 int subscript_test_float(void) {
   int res = 0;
   int exception_occurred = 0;
-  std::cout << "\n====Float: Subscript Access====" << std::endl;
+  std::cout << "\033[31m" << "\n====Float: Subscript Access====" << "\033[0m"
+            << std::endl;
   Array<float> arr1 = Array<float>(3);
   std::cout << std::endl;
   for (size_t i = 0; i < arr1.size(); i++) {
@@ -185,7 +189,9 @@ int subscript_test_float(void) {
 int test_ocf_double(void) {
   int res = 0;
   int err = 0;
-  std::cout << "\n====Double: Default Constructor Test====" << std::endl;
+  std::cout << "\033[31m"
+            << "\n====Double: Default Constructor Test====" << "\033[0m"
+            << std::endl;
   Array<double> arr = Array<double>();
   if (arr.size() == 0)
     std::cout << "Array is empty as expected" << std::endl;
@@ -248,7 +254,8 @@ int test_ocf_double(void) {
 int subscript_test_double(void) {
   int res = 0;
   int exception_occurred = 0;
-  std::cout << "\n====Double: Subscript Access====" << std::endl;
+  std::cout << "\033[31m" << "\n====Double: Subscript Access====" << "\033[0m"
+            << std::endl;
   Array<double> arr1 = Array<double>(3);
   std::cout << std::endl;
   for (size_t i = 0; i < arr1.size(); i++) {
@@ -273,7 +280,9 @@ int subscript_test_double(void) {
 int test_ocf_string(void) {
   int res = 0;
   int err = 0;
-  std::cout << "\n====String: Default Constructor Test====" << std::endl;
+  std::cout << "\033[31m"
+            << "\n====String: Default Constructor Test====" << "\033[0m"
+            << std::endl;
   Array<std::string> arr = Array<std::string>();
   if (arr.size() == 0)
     std::cout << "Array is empty as expected" << std::endl;
@@ -336,7 +345,8 @@ int test_ocf_string(void) {
 int subscript_test_string(void) {
   int res = 0;
   int exception_occurred = 0;
-  std::cout << "\n====String: Subscript Access====" << std::endl;
+  std::cout << "\033[31m" << "\n====String: Subscript Access====" << "\033[0m"
+            << std::endl;
   Array<std::string> arr1 = Array<std::string>(3);
   arr1[0] = "hello";
   arr1[1] = "world";
