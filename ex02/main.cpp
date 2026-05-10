@@ -1,13 +1,13 @@
 #include "Array.hpp"
 #include <exception>
 #include <iostream>
-#include <limits>
 
 int test_ocf(void) {
   int res = 0;
   int err = 0;
+  std::cout << "\033[31m" << "====OCF Test====" << "\033[0m" << std::endl;
   // Default Constructor
-  std::cout << "\n====Default Constructor Test====" << std::endl;
+  std::cout << "====Default Constructor Test====" << std::endl;
   Array<int> arr = Array<int>();
   if (arr.size() == 0)
     std::cout << "Array is empty as expected" << std::endl;
@@ -55,7 +55,7 @@ int test_ocf(void) {
   std::cout << "\n====Empty Array Access====\n" << std::endl;
   int exception_occurred = 0;
   try {
-    arr[0];
+    arr[0]; // empty array index access
   } catch (const std::exception &e) {
     exception_occurred = 1;
     std::cout << e.what() << std::endl;
@@ -98,9 +98,8 @@ int subscript_test(void) {
 int test_ocf_float(void) {
   int res = 0;
   int err = 0;
-  std::cout << "\033[31m"
-            << "\n====Float: Default Constructor Test====" << "\033[0m"
-            << std::endl;
+  std::cout << "\n\033[31m" << "====Float OCF Test====" << "\033[0m";
+  std::cout << "\n====Float: Default Constructor Test====" << std::endl;
   Array<float> arr = Array<float>();
   if (arr.size() == 0)
     std::cout << "Array is empty as expected" << std::endl;
@@ -149,8 +148,9 @@ int test_ocf_float(void) {
   try {
     arr[0];
   } catch (const std::exception &e) {
+    std::cout << "\nexpected: std::exception\n";
+    std::cout << "actual:" << e.what() << std::endl;
     exception_occurred = 1;
-    std::cout << e.what() << std::endl;
   }
   if (exception_occurred == 0) {
     std::cout << "Exception Did not occurr." << std::endl;
@@ -189,9 +189,9 @@ int subscript_test_float(void) {
 int test_ocf_double(void) {
   int res = 0;
   int err = 0;
-  std::cout << "\033[31m"
-            << "\n====Double: Default Constructor Test====" << "\033[0m"
-            << std::endl;
+
+  std::cout << "\n\033[31m" << "====Double: OCF Test====" << "\033[0m";
+  std::cout << "\n====Double: Default Constructor Test====" << std::endl;
   Array<double> arr = Array<double>();
   if (arr.size() == 0)
     std::cout << "Array is empty as expected" << std::endl;
@@ -240,8 +240,9 @@ int test_ocf_double(void) {
   try {
     arr[0];
   } catch (const std::exception &e) {
+    std::cout << "\nexpected: std::exception\n";
+    std::cout << "actual:" << e.what() << std::endl;
     exception_occurred = 1;
-    std::cout << e.what() << std::endl;
   }
   if (exception_occurred == 0) {
     std::cout << "Exception Did not occurr." << std::endl;
@@ -280,9 +281,9 @@ int subscript_test_double(void) {
 int test_ocf_string(void) {
   int res = 0;
   int err = 0;
-  std::cout << "\033[31m"
-            << "\n====String: Default Constructor Test====" << "\033[0m"
-            << std::endl;
+
+  std::cout << "\n\033[31m" << "====String: OCF Test====" << "\033[0m";
+  std::cout << "\n====String: Default Constructor Test====" << std::endl;
   Array<std::string> arr = Array<std::string>();
   if (arr.size() == 0)
     std::cout << "Array is empty as expected" << std::endl;
@@ -331,8 +332,9 @@ int test_ocf_string(void) {
   try {
     arr[0];
   } catch (const std::exception &e) {
+    std::cout << "\nexpected: std::exception\n";
+    std::cout << "actual:" << e.what() << std::endl;
     exception_occurred = 1;
-    std::cout << e.what() << std::endl;
   }
   if (exception_occurred == 0) {
     std::cout << "Exception Did not occurr." << std::endl;
@@ -384,7 +386,7 @@ int main(void)
       ret++;
     }
     if (test_ocf_float()) {
-      std::cout << "\nFloat OCF test failed!" << std::endl;
+      std::cout << "\nFloat: OCF test failed!" << std::endl;
       ret++;
     }
     if (subscript_test_float()) {

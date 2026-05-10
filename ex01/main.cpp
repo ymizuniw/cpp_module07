@@ -1,37 +1,25 @@
 #include <iostream>
 #include "iter.hpp"
 
-void appendZero(std::string &str)
-{
-    str.append("0");
-}
+void appendZero(std::string &str) { str.append("0"); }
 
 void printStrArray(std::string strArray[], const size_t size)
 {
-    for (size_t i=0; i<size; i++)
-        std::cout << strArray[i] << std::endl;
+  for (size_t i = 0; i < size; i++)
+    std::cout << strArray[i] << std::endl;
 }
 
-void addOne(int &num)
-{
-    num = num + 1;
-}
+void addOne(int &num) { num = num + 1; }
 
 void printIntArray(int intArray[], const size_t size)
 {
-    for (size_t i=0; i<size;i++)
-        std::cout << intArray[i] << std::endl;
+  for (size_t i = 0; i < size; i++)
+    std::cout << intArray[i] << std::endl;
 }
 
-void printStr(std::string const &str)
-{
-    std::cout << str << std::endl;
-}
+void printStr(std::string const &str) { std::cout << str << std::endl; }
 
-void printInt(int const num)
-{
-    std::cout << num << std::endl;
-}
+void printInt(int const num) { std::cout << num << std::endl; }
 
 int main(void)
 {
@@ -40,10 +28,12 @@ int main(void)
     {
         std::cout << "========String Type========" << std::endl;
         std::string strArray[] = {"str1" , "str2", "str3"};
+        std::cout << "appendZero\n" << std::endl;
         ::iter(strArray, 3, appendZero);
         printStrArray(strArray, 3);
         std::cout << "========Int Type========" << std::endl;
         int intArray[] = {1,2,3};
+        std::cout << "addOne\n" << std::endl;
         ::iter(intArray, 3, addOne);
         printIntArray(intArray, 3);
     }
